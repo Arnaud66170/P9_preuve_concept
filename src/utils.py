@@ -83,3 +83,21 @@ def stop_mlflow_server(server_process):
         server_process.terminate()
         server_process.wait()
         print("✅ MLflow Server arrêté proprement.")
+
+# === Affichage de l'utilisation actuelle du GPU ===
+@timing
+def print_gpu_utilization():
+    """
+    Affiche l'état actuel de l'utilisation GPU :
+    - ID GPU
+    - Charge (%)
+    - Mémoire utilisée, libre et totale
+    """
+    import GPUtil
+    gpus = GPUtil.getGPUs()
+    for gpu in gpus:
+        print(f"GPU ID {gpu.id}: {gpu.name}")
+        print(f"  Load: {gpu.load*100:.1f}%")
+        print(f"  Free memory: {gpu.memoryFree}MB")
+        print(f"  Used memory: {gpu.memoryUsed}MB")
+        print(f"  Total memory: {gpu.memoryTotal}MB")
