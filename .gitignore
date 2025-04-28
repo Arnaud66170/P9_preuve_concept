@@ -1,0 +1,38 @@
+# Ignore venv
+venv_p9/
+.venv/
+ENV/
+env/
+*.pyc
+__pycache__/
+.ipynb_checkpoints/
+
+# Ignore outputs et modèles lourds
+models_saved/
+outputs/
+logs/
+results/
+*.h5
+*.ftz
+*.pkl
+*.joblib
+*.txt
+
+# Ignore fichiers temporaires
+.DS_Store
+Thumbs.db
+
+# Ignore artefacts MLflow (gérés par cloud)
+mlruns/
+
+# Ignore données brutes
+data/
+tweets.csv
+
+# Ignore fichiers secrets
+.env
+
+# Ignore notebook d'expérimentation lourde
+mlflow_registry_management.ipynb
+01_full_pipeline_modeling.ipynb
+P7_main_notebook.ipynb
